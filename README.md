@@ -1,67 +1,102 @@
 # YouTube Subscriptions Fetcher
 
-A Python script to retrieve all YouTube subscriptions from your account using the YouTube Data API v3.
+A simple Python script to retrieve all YouTube subscriptions from any YouTube account. Users just click "Allow" in their browser - no API keys needed!
 
-## Setup
+## Features
 
-### 1. Get a YouTube API Key
+- ✅ Simple OAuth 2.0 authentication (just click "Allow" in browser)
+- ✅ Fetches ALL subscriptions automatically
+- ✅ Saves credentials for future use (no re-authentication needed)
+- ✅ Exports to JSON, TXT, and URL formats
+- ✅ User-friendly - no technical knowledge required for end users
 
+## For Developers: One-Time Setup
+
+If you're setting this up for the first time, you need to create OAuth credentials. See **[SETUP_OAUTH.md](SETUP_OAUTH.md)** for detailed instructions.
+
+**Quick version:**
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the YouTube Data API v3:
-   - Navigate to "APIs & Services" > "Library"
-   - Search for "YouTube Data API v3"
-   - Click "Enable"
-4. Create credentials:
-   - Go to "APIs & Services" > "Credentials"
-   - Click "Create Credentials" > "API Key"
-   - Copy your API key
+2. Create a project and enable YouTube Data API v3
+3. Create OAuth 2.0 credentials (Desktop app)
+4. Download the JSON file and save as `client_secrets.json`
 
-### 2. Install Dependencies
+## For Users: How to Use
+
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment Variables
-
-1. Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Edit `.env` and add your API key:
-   ```
-   YOUTUBE_API_KEY=your_actual_api_key_here
-   ```
-
-## Usage
-
-Run the script:
+### 2. Run the Script
 
 ```bash
 python get_subscriptions.py
 ```
 
-The script will:
-- Fetch all your YouTube subscriptions
-- Display the first 5 subscriptions in the console
-- Save detailed information to `subscriptions.json`
-- Save a simple list of channel names to `subscriptions.txt`
+### 3. Authorize Access
+
+- Your browser will open automatically
+- Sign in with your Google account
+- Click "Allow" to grant access
+- That's it! The script will fetch your subscriptions
+
+### 4. Next Time
+
+The next time you run the script, you won't need to authorize again. Your credentials are saved in `token.pickle`.
 
 ## Output Files
 
-- **subscriptions.json** - Full subscription data including channel IDs, descriptions, thumbnails, etc.
-- **subscriptions.txt** - Simple text list of channel names
+The script creates three files:
 
-## Authentication Note
+- **subscriptions.json** - Full details (channel ID, description, thumbnail, etc.)
+- **subscriptions.txt** - Simple list of channel names
+- **subscription_urls.txt** - List of channel URLs
 
-This script uses an API key which requires you to be authenticated with your Google account when using the API. The `mine=True` parameter in the API call fetches subscriptions for the authenticated user.
+## Project Structure
 
-For better authentication (OAuth 2.0), you would need to modify the script to use OAuth flow instead of just an API key.
+```
+better-yt/
+├── get_subscriptions.py      # Main script
+├── requirements.txt           # Python dependencies
+├── client_secrets.json        # OAuth credentials (you create this)
+├── token.pickle              # Saved user credentials (auto-generated)
+├── subscriptions.json        # Output: Full data
+├── subscriptions.txt         # Output: Channel names
+└── subscription_urls.txt     # Output: Channel URLs
+```
+
+## Security & Privacy
+
+- **client_secrets.json** - Keep this private (developer only)
+- **token.pickle** - User's personal credentials (don't share)
+- Add both to `.gitignore` if using version control
 
 ## Troubleshooting
 
-- **"Please set your YOUTUBE_API_KEY"**: Make sure you created a `.env` file with your API key
-- **HTTP 403 Error**: Your API key might be invalid or the YouTube Data API v3 is not enabled for your project
-- **No subscriptions returned**: You may need to use OAuth 2.0 authentication instead of just an API key
+**"client_secrets.json file not found!"**
+- You need to create OAuth credentials first
+- See [SETUP_OAUTH.md](SETUP_OAUTH.md) for instructions
+
+**"Access blocked: This app's request is invalid"**
+- Make sure you added your email as a test user in the OAuth consent screen
+- The app might be in "Testing" mode (which is fine for personal use)
+
+**Browser doesn't open automatically**
+- Copy the URL from the terminal and paste it in your browser manually
+
+**"Token has been expired or revoked"**
+- Delete `token.pickle` and run the script again to re-authenticate
+
+## How It Works
+
+1. Script checks for existing credentials (`token.pickle`)
+2. If none exist, opens browser for OAuth authorization
+3. User signs in and clicks "Allow"
+4. Script saves credentials for future use
+5. Fetches all subscriptions using YouTube Data API v3
+6. Saves to multiple output formats
+
+## API Quota
+
+YouTube API has a daily quota of 10,000 units. This script uses approximately 1 unit per 50 subscriptions, so you can fetch subscriptions many times per day without issues.
