@@ -1,11 +1,12 @@
-# YouTube Subscriptions Fetcher
+# Better YouTube Tools
 
-A simple Python script to retrieve all YouTube subscriptions from any YouTube account. Users just click "Allow" in their browser - no API keys needed!
+A collection of Python scripts for YouTube channel management and discovery. Find your subscriptions and discover similar channels - all with simple OAuth authentication!
 
 ## Features
 
+- ✅ **Subscription Fetcher**: Get all your YouTube subscriptions
+- ✅ **Channel Recommendations**: Find similar channels based on content analysis
 - ✅ Simple OAuth 2.0 authentication (just click "Allow" in browser)
-- ✅ Fetches ALL subscriptions automatically
 - ✅ Saves credentials for future use (no re-authentication needed)
 - ✅ Exports to JSON, TXT, and URL formats
 - ✅ User-friendly - no technical knowledge required for end users
@@ -28,42 +29,57 @@ If you're setting this up for the first time, you need to create OAuth credentia
 pip install -r requirements.txt
 ```
 
-### 2. Run the Script
+### 2. Get Your Subscriptions
 
 ```bash
 python get_subscriptions.py
 ```
 
-### 3. Authorize Access
-
 - Your browser will open automatically
 - Sign in with your Google account
 - Click "Allow" to grant access
-- That's it! The script will fetch your subscriptions
+- Your subscriptions will be saved to JSON/TXT files
+
+### 3. Find Similar Channels (Optional)
+
+```bash
+python recommend_channels.py
+```
+
+- Enter a channel name from your subscriptions
+- The script will analyze the channel and find similar ones
+- Get top 10 recommendations with similarity scores
+
+See **[RECOMMENDATION_GUIDE.md](RECOMMENDATION_GUIDE.md)** for detailed usage.
 
 ### 4. Next Time
 
-The next time you run the script, you won't need to authorize again. Your credentials are saved in `token.pickle`.
+The next time you run either script, you won't need to authorize again. Your credentials are saved in `token.pickle`.
 
 ## Output Files
 
-The script creates three files:
-
-- **subscriptions.json** - Full details (channel ID, description, thumbnail, etc.)
+**From get_subscriptions.py:**
+- **subscriptions.json** - Full subscription details (channel ID, description, thumbnail, etc.)
 - **subscriptions.txt** - Simple list of channel names
 - **subscription_urls.txt** - List of channel URLs
+
+**From recommend_channels.py:**
+- **recommendations_[ChannelName].json** - Similar channels with similarity scores and details
 
 ## Project Structure
 
 ```
 better-yt/
-├── get_subscriptions.py      # Main script
-├── requirements.txt           # Python dependencies
-├── client_secrets.json        # OAuth credentials (you create this)
-├── token.pickle              # Saved user credentials (auto-generated)
-├── subscriptions.json        # Output: Full data
-├── subscriptions.txt         # Output: Channel names
-└── subscription_urls.txt     # Output: Channel URLs
+├── get_subscriptions.py      # Fetch your subscriptions
+├── recommend_channels.py     # Find similar channels
+├── requirements.txt          # Python dependencies
+├── SETUP_OAUTH.md           # OAuth setup guide
+├── RECOMMENDATION_GUIDE.md  # Recommendation system guide
+├── client_secrets.json      # OAuth credentials (you create this)
+├── token.pickle             # Saved user credentials (auto-generated)
+├── subscriptions.json       # Output: Your subscriptions
+├── subscriptions.txt        # Output: Channel names
+└── recommendations_*.json   # Output: Channel recommendations
 ```
 
 ## Security & Privacy

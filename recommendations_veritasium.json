@@ -1,0 +1,113 @@
+{
+  "target_channel": "veritasium",
+  "recommendations": [
+    {
+      "channel_id": "UCteZqZz14UkFIpxE1kjWGZg",
+      "channel_title": "Rishabh Sharma",
+      "channel_url": "https://www.youtube.com/channel/UCteZqZz14UkFIpxE1kjWGZg",
+      "description": "An element of truth - videos about science, education, and anything else I find interesting.",
+      "subscriber_count": 11,
+      "similarity_score": 0.666918316376146,
+      "topic_categories": []
+    },
+    {
+      "channel_id": "UCRV7aSlvWxfDUe59b6ljhgg",
+      "channel_title": "Geometry Grid",
+      "channel_url": "https://www.youtube.com/channel/UCRV7aSlvWxfDUe59b6ljhgg",
+      "description": "An element of truth - videos about science, education, and anything else I find interesting.",
+      "subscriber_count": 0,
+      "similarity_score": 0.6470588235294118,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Knowledge"
+      ]
+    },
+    {
+      "channel_id": "UCligllriK7C-FVB8tIVIsuA",
+      "channel_title": "Vsync Technologies",
+      "channel_url": "https://www.youtube.com/channel/UCligllriK7C-FVB8tIVIsuA",
+      "description": "Hi ! there myself Vinay .\nAn element of truth - videos about science ,education and everything else i find interesting.\nif this is your cup of tea then Subscribe Karo!!",
+      "subscriber_count": 0,
+      "similarity_score": 0.5797386715376658,
+      "topic_categories": []
+    },
+    {
+      "channel_id": "UC0tdbq1ATLCVdqtQZ_19eSg",
+      "channel_title": "It's SV World",
+      "channel_url": "https://www.youtube.com/channel/UC0tdbq1ATLCVdqtQZ_19eSg",
+      "description": "An element of truth - I find videos about science , education and anything else interesting.",
+      "subscriber_count": 390,
+      "similarity_score": 0.5506742871883963,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Knowledge"
+      ]
+    },
+    {
+      "channel_id": "UCCQ8zYUXqHztZQU0LQQutZg",
+      "channel_title": "Tech Monk",
+      "channel_url": "https://www.youtube.com/channel/UCCQ8zYUXqHztZQU0LQQutZg",
+      "description": "An element of truth - videos about science, discoveries, education and anything else I find interesting\n",
+      "subscriber_count": 1330,
+      "similarity_score": 0.5114543035185996,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Knowledge"
+      ]
+    },
+    {
+      "channel_id": "UCmk9YN2rak-ZFs6jGTJAO_A",
+      "channel_title": "Hexa Hydro",
+      "channel_url": "https://www.youtube.com/channel/UCmk9YN2rak-ZFs6jGTJAO_A",
+      "description": "An element of truth - videos about science, discoveries, education and anything else I find interesting.\n",
+      "subscriber_count": 44,
+      "similarity_score": 0.51043559022681,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Knowledge"
+      ]
+    },
+    {
+      "channel_id": "UC8ARCtKs6V0UKLN0bHkO8Mw",
+      "channel_title": "What is What",
+      "channel_url": "https://www.youtube.com/channel/UC8ARCtKs6V0UKLN0bHkO8Mw",
+      "description": "Welcome to WHAT is WHAT channel.  An element of truth - videos about science, education, and anything else I find interesting.",
+      "subscriber_count": 111,
+      "similarity_score": 0.4833140870187803,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Knowledge"
+      ]
+    },
+    {
+      "channel_id": "UCIEr4YcwqR3nenM-Y_hf4bw",
+      "channel_title": "STV STUDIO",
+      "channel_url": "https://www.youtube.com/channel/UCIEr4YcwqR3nenM-Y_hf4bw",
+      "description": "An element of truth - videos about science, education, and anything else I find interesting.",
+      "subscriber_count": 4,
+      "similarity_score": 0.4000910502907213,
+      "topic_categories": []
+    },
+    {
+      "channel_id": "UCVTvcWJtFljCDo8-U1q4o8A",
+      "channel_title": "Naman Patel",
+      "channel_url": "https://www.youtube.com/channel/UCVTvcWJtFljCDo8-U1q4o8A",
+      "description": "An element of truth - videos about science, education, and anything else I find interesting.\n",
+      "subscriber_count": 88,
+      "similarity_score": 0.3836536311222348,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Lifestyle_(sociology)",
+        "https://en.wikipedia.org/wiki/Knowledge",
+        "https://en.wikipedia.org/wiki/Technology"
+      ]
+    },
+    {
+      "channel_id": "UCHf7riZe0_n5B4QYUYKa1RQ",
+      "channel_title": "EXPLOGY",
+      "channel_url": "https://www.youtube.com/channel/UCHf7riZe0_n5B4QYUYKa1RQ",
+      "description": "An element of truth - videos about science, education, and anything else we find interesting.",
+      "subscriber_count": 7,
+      "similarity_score": 0.3834236694931015,
+      "topic_categories": [
+        "https://en.wikipedia.org/wiki/Entertainment",
+        "https://en.wikipedia.org/wiki/Knowledge",
+        "https://en.wikipedia.org/wiki/Film"
+      ]
+    }
+  ]
+}
