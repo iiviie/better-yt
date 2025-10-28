@@ -5,11 +5,13 @@ A collection of Python scripts for YouTube channel management and discovery. Fin
 ## Features
 
 - ✅ **Subscription Fetcher**: Get all your YouTube subscriptions
-- ✅ **Channel Recommendations**: Find similar channels based on content analysis
+- ✅ **Channel Recommendations**: Find similar channels from your existing subscriptions
+- ✅ **NEW Channel Discovery**: Discover channels you're NOT subscribed to yet!
 - ✅ Simple OAuth 2.0 authentication (just click "Allow" in browser)
+- ✅ Smart content similarity analysis using TF-IDF and topic matching
+- ✅ Quality filters (minimum subscribers, active channels only)
 - ✅ Saves credentials for future use (no re-authentication needed)
 - ✅ Exports to JSON, TXT, and URL formats
-- ✅ User-friendly - no technical knowledge required for end users
 
 ## For Developers: One-Time Setup
 
@@ -40,21 +42,34 @@ python get_subscriptions.py
 - Click "Allow" to grant access
 - Your subscriptions will be saved to JSON/TXT files
 
-### 3. Find Similar Channels (Optional)
+### 3. Find Similar Channels in Your Subscriptions
 
 ```bash
 python recommend_channels.py
 ```
 
 - Enter a channel name from your subscriptions
-- The script will analyze the channel and find similar ones
-- Get top 10 recommendations with similarity scores
+- Compares with ALL your other subscriptions
+- Shows top 10 most similar channels you already follow
 
-See **[RECOMMENDATION_GUIDE.md](RECOMMENDATION_GUIDE.md)** for detailed usage.
+### 4. Discover NEW Channels (The Main Feature!)
 
-### 4. Next Time
+```bash
+python discover_new_channels.py
+```
 
-The next time you run either script, you won't need to authorize again. Your credentials are saved in `token.pickle`.
+- Enter a channel name as your "seed" (what you like)
+- Analyzes that channel's popular videos
+- Finds related videos and extracts their channels
+- Searches by topic categories
+- Filters for quality (default: 50k+ subscribers)
+- Returns 10-15 NEW channels you're not subscribed to!
+
+**This is what you wanted!** Real channel discovery beyond your subscriptions.
+
+### 5. Next Time
+
+The next time you run any script, you won't need to authorize again. Your credentials are saved in `token.pickle`.
 
 ## Output Files
 
@@ -64,14 +79,18 @@ The next time you run either script, you won't need to authorize again. Your cre
 - **subscription_urls.txt** - List of channel URLs
 
 **From recommend_channels.py:**
-- **recommendations_[ChannelName].json** - Similar channels with similarity scores and details
+- **recommendations_[ChannelName].json** - Similar channels from your subscriptions
+
+**From discover_new_channels.py:**
+- **new_channels_[ChannelName].json** - NEW channels to discover (not in your subscriptions)
 
 ## Project Structure
 
 ```
 better-yt/
 ├── get_subscriptions.py      # Fetch your subscriptions
-├── recommend_channels.py     # Find similar channels
+├── recommend_channels.py     # Find similar channels from your subs
+├── discover_new_channels.py  # 🌟 Discover NEW channels (main feature!)
 ├── requirements.txt          # Python dependencies
 ├── SETUP_OAUTH.md           # OAuth setup guide
 ├── RECOMMENDATION_GUIDE.md  # Recommendation system guide
@@ -79,7 +98,8 @@ better-yt/
 ├── token.pickle             # Saved user credentials (auto-generated)
 ├── subscriptions.json       # Output: Your subscriptions
 ├── subscriptions.txt        # Output: Channel names
-└── recommendations_*.json   # Output: Channel recommendations
+├── recommendations_*.json   # Output: Similar channels from your subs
+└── new_channels_*.json      # Output: NEW channel discoveries
 ```
 
 ## Security & Privacy
